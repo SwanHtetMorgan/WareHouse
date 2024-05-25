@@ -29,14 +29,14 @@ public class ApplicationConfig {
     server.setDescription("Development");
 
     io.swagger.v3.oas.models.info.Contact myContact = new Contact();
-    myContact.setName("EduVerse");
-    myContact.setEmail("eduverse-contact@gmail.com");
+    myContact.setName("WareHouse");
+    myContact.setEmail("WareHouse-contact@gmail.com");
 
     Info information =
         new Info()
-            .title("E-Learning System API")
+            .title("WareHouse Management System API")
             .version("1.0")
-            .description("This API exposes endpoints to manage E-Learning system.")
+            .description("This API exposes endpoints to manage WareHouse Management system.")
             .contact(myContact);
     return new OpenAPI().info(information).servers(List.of(server));
   }

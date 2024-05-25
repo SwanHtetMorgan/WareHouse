@@ -13,6 +13,4 @@ public class ProductDto implements Serializable {
   @NotNull @NotBlank String name;
   @NotNull @NotBlank String description;
   @NotNull CATEGORY category;
-
-  Integer inventoryId;
 }

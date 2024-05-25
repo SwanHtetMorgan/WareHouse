@@ -4,5 +4,7 @@ import java.util.List;
 
 public interface AuthorizationServices {
 
-	boolean dbInfoMatcher(List<String> segmentation);
+  boolean dbInfoMatcher(List<String> segmentation);
+
+  String RoleExtraction(List<String> Segmentation);
 }

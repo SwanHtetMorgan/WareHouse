@@ -1,0 +1,63 @@
+
+[
+  {
+    "name": "Product 1",
+    "description": "Description of Product 1",
+    "category": "ELECTRONICS",
+    "inventoryId": 123
+  },
+  {
+    "name": "Product 2",
+    "description": "Description of Product 2",
+    "category": "CLOTHING",
+    "inventoryId": 124
+  },
+  {
+    "name": "Product 3",
+    "description": "Description of Product 3",
+    "category": "HOME_APPLIANCES",
+    "inventoryId": 125
+  },
+  {
+    "name": "Product 4",
+    "description": "Description of Product 4",
+    "category": "FURNITURE",
+    "inventoryId": 126
+  },
+  {
+    "name": "Product 5",
+    "description": "Description of Product 5",
+    "category": "BOOKS",
+    "inventoryId": 127
+  },
+  {
+    "name": "Product 6",
+    "description": "Description of Product 6",
+    "category": "TOYS",
+    "inventoryId": 128
+  },
+  {
+    "name": "Product 7",
+    "description": "Description of Product 7",
+    "category": "BEAUTY",
+    "inventoryId": 129
+  },
+  {
+    "name": "Product 8",
+    "description": "Description of Product 8",
+    "category": "SPORTS",
+    "inventoryId": 130
+  },
+  {
+    "name": "Product 9",
+    "description": "Description of Product 9",
+    "category": "FOOD",
+    "inventoryId": 131
+  },
+  {
+    "name": "Product 10",
+    "description": "Description of Product 10",
+    "category": "GARDEN",
+    "inventoryId": 132
+  }
+]

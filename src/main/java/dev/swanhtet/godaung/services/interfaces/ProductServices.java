@@ -16,7 +16,7 @@ public interface ProductServices {
 
   boolean assignToInventory(Integer inventoryId, Integer productId);
 
-  boolean deleteProduct(Long productId);
+  boolean deleteProduct(Integer productId);
 
   List<ProductResponseDto> findProductByInventory(Integer inventoryId);
 }

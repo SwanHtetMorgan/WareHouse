@@ -14,6 +14,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.exception.DataException;
 import org.modelmapper.ModelMapper;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
@@ -37,31 +40,28 @@ public class ProductServiceImpl implements ProductServices {
   }
 
   @Override
+ // @Cacheable(value = "products")
   public List<ProductResponseDto> getAllPrdouct() {
+    log.info("call from database");
     return productRepository.findAll().stream()
         .map(product -> modelMapper.map(product, ProductResponseDto.class))
         .toList();
   }
 
   @Override
+  @Cacheable(value = "products", key = "#productId")
   public ProductResponseDto getProductById(Long productId) {
-
+    log.info("call from database");
     Optional<Product> optionalProduct = productRepository.findById(intConvertor(productId));
     if (optionalProduct.isPresent()) {
       Product product = optionalProduct.get();
-      ProductResponseDto productResponseDto = new ProductResponseDto();
-      productResponseDto.setId(product.getId());
-      productResponseDto.setName(product.getName());
-      productResponseDto.setDescription(product.getDescription());
-
-      productResponseDto.setCreatedAt(product.getCreatedAt());
-      productResponseDto.setUpdatedAt(product.getUpdatedAt());
-      return productResponseDto;
+      return modelMapper.map(product, ProductResponseDto.class);
     }
     return null;
   }
 
   @Override
+  //@CachePut(value = "products", key = "#productId")
   public boolean updateProduct(Long productId, ProductDto productDto) {
     Optional<Product> optionalProduct = productRepository.findById(intConvertor(productId));
     if (optionalProduct.isPresent()) {
@@ -74,6 +74,7 @@ public class ProductServiceImpl implements ProductServices {
   }
 
   @Override
+//  @CacheEvict(value = "products", allEntries = true)
   public boolean assignToInventory(Integer inventoryId, Integer productId) {
 
     Optional<Inventory> optionalInventory = inventoryRepository.findById(inventoryId);
@@ -89,9 +90,11 @@ public class ProductServiceImpl implements ProductServices {
   }
 
   @Override
-  public boolean deleteProduct(Long productId) {
+  @CacheEvict(value = "products", key = "#productId")
+  public boolean deleteProduct(Integer productId) {
     try {
-      productRepository.deleteById(intConvertor(productId));
+      log.info("Deleted");
+      productRepository.deleteById(productId);
       return true;
     } catch (DataAccessException e) {
       throw e;
@@ -99,6 +102,7 @@ public class ProductServiceImpl implements ProductServices {
   }
 
   @Override
+ // @Cacheable(value = "products", key = "#inventoryId")
   public List<ProductResponseDto> findProductByInventory(Integer inventoryId) {
     try {
       List<Product> products = productRepository.findProductByInventoryId(inventoryId);

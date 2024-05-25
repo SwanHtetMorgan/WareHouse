@@ -14,6 +14,9 @@ public class InterCeptorRegistration implements WebMvcConfigurer {
 
   @Override
   public void addInterceptors(@NonNull InterceptorRegistry registry) {
-    registry.addInterceptor(interceptor).addPathPatterns("/api/inventory/**").excludePathPatterns("/api/auth/**");
+    registry
+        .addInterceptor(interceptor)
+        .addPathPatterns("/api/inventory/**", "/api/product/**", "/api/pdf**")
+        .excludePathPatterns("/api/auth/**");
   }
 }

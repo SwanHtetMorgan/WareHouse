@@ -14,13 +14,12 @@ import lombok.Setter;
 @NoArgsConstructor
 public class LoginRequst {
 
-	@NotNull(message = "message cannot be null")
-	@NotBlank(message = "email cannot be blank")
-	@Email
-	String email;
+  @NotNull(message = "message cannot be null")
+  @NotBlank(message = "email cannot be blank")
+  @Email
+  String email;
 
-	@NotNull(message = "password must be filled")
-	@NotBlank(message = "password must be filled")
-	String password;
-
+  @NotNull(message = "password must be filled")
+  @NotBlank(message = "password must be filled")
+  String password;
 }

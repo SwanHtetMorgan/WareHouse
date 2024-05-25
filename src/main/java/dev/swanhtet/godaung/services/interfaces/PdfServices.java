@@ -5,6 +5,5 @@ import java.io.IOException;
 
 public interface PdfServices {
 
-	ByteArrayInputStream generateSystemUserPDFFIle() throws IOException;
-
+  ByteArrayInputStream generateSystemUserPDFFIle() throws IOException;
 }

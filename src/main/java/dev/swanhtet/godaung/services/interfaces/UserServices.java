@@ -2,24 +2,21 @@ package dev.swanhtet.godaung.services.interfaces;
 
 import dev.swanhtet.godaung.dto.LoginRequst;
 import dev.swanhtet.godaung.dto.request.UserDto;
-import dev.swanhtet.godaung.model.User;
-
 import java.util.List;
 
 public interface UserServices {
 
-	boolean createUser(UserDto userDTO);
+  boolean createUser(UserDto userDTO);
 
-	List<UserDto> getAllUsers();
+  List<UserDto> getAllUsers();
 
-	UserDto getUserById(Long id);
+  UserDto getUserById(Long id);
 
-	boolean updateUser(Long id, UserDto userDTO);
+  boolean updateUser(Integer id, UserDto userDTO);
 
-	boolean deleteUser(Long id);
+  boolean deleteUser(Integer id);
 
-	String authenticateUser(LoginRequst loginRequst);
+  String authenticateUser(LoginRequst loginRequst);
 
-
-
+  UserDto findById(Integer id);
 }

@@ -1,7 +1,7 @@
 package dev.swanhtet.godaung.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,4 +18,7 @@ public class Role {
 
   @Column(name = "role_name", nullable = false, unique = true, length = 50)
   private String roleName;
+
+  @OneToMany(mappedBy = "role", cascade = CascadeType.DETACH, orphanRemoval = true)
+  private List<User> users;
 }

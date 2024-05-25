@@ -27,7 +27,7 @@ public class User extends AuditTrail {
   @Column(name = "email", nullable = false, unique = true)
   private String email;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinColumn(name = "role", referencedColumnName = "role_id")
   private Role role;
 }

@@ -5,7 +5,6 @@ import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.servers.Server;
 import java.util.List;
-
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -15,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Getter
 @Configuration
-
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
@@ -45,6 +43,4 @@ public class ApplicationConfig {
 
   @Value("${pdf.filepath}")
   public static String pdfFilePath;
-
-
 }

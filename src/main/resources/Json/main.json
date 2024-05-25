@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Smartphone",
+    "description": "High-performance smartphone with advanced features",
+    "category": "ELECTRONICS"
+  },
+  {
+    "name": "Running Shoes",
+    "description": "Lightweight running shoes with breathable mesh",
+    "category": "APPAREL_AND_FASHION"
+  },
+  {
+    "name": "Coffee Table",
+    "description": "Modern coffee table with tempered glass top",
+    "category": "HOME_AND_FURNITURE"
+  },
+  {
+    "name": "Moisturizing Cream",
+    "description": "Hydrating moisturizer for dry skin",
+    "category": "HEALTH_AND_BEAUTY"
+  },
+  {
+    "name": "Car Battery",
+    "description": "High-quality battery for automotive vehicles",
+    "category": "AUTOMOTIVE"
+  }
+]
